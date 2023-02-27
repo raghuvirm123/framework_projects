@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</script>
+<title>admin page</title>
+</head>
+<body>
+	<form action="@{userLogin}" method="post">
+		<h1>Admin Page</h1>
+
+		<button type="submit">
+			<a href="/list-voting">CANDIDATE 1 Vote Count</a>
+		</button>
+		<br>
+
+		<button type="submit">
+			<a href="/list-voting1">CANDIDATE 2 Vote Count</a>
+		</button>
+		<br>
+		<button type="submit">
+			<a href="/list-voting2">CANDIDATE 3 Vote Count</a>
+		</button>
+		<br>
+		<button type="submit">
+			<a href="/list-voting3">CANDIDATE 4 Vote Count</a>
+		</button>
+		<br>
+		<button>
+			<a href="/login">logout</a>
+		</button>
+	</form>
+
+	<style>
+form {
+	background-color: lightgoldenrodyellow;
+	border-radius: 10px;
+	border: 2px solid black;
+	padding: 49px 31px;
+	display: inline-block;
+}
+
+button {
+	margin-top: 27PX;
+	margin-left: 3px;
+}
+
+h1 {
+	margin-left: 8px;
+}
+</style>
+</body>
+</html>

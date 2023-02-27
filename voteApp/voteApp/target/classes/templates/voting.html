@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/javascript">
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null
+	};
+</script>
+<title>Register</title>
+
+</head>
+<body>
+	<form action="voting" method="post" >
+		
+		<h1>VOTE</h1>
+		<input class="inp" type="radio" name="candidate" value="candidate_1"
+			> <label for="">CANDIDATE 1</label> <br>
+		<input class="inp" type="radio" name="candidate2" value="candidate_2"
+			> <label for="">CANDIDATE 2</label> <br>
+		<input class="inp" type="radio" name="candidate3" value="candidate_3"
+			> <label for="">CANDIDATE 3</label> <br>
+		<input class="inp" type="radio" name="candidate4" value="candidate_4"
+			> <label for="">CANDIDATE 4</label> <br>
+		<button type="submit" id="submitBtn"   onclick="submitVote()" >VOTE</button>
+        <button> <a href="/login">logout</button></a>
+	</form>
+<div id="message"></div>
+	<style>
+form {
+	background-color: lightgoldenrodyellow;
+	border-radius: 10px;
+	border: 2px solid black;
+	padding: 49px 31px;
+	display: inline-block;
+}
+
+input {
+	margin-top: 24PX;
+}
+
+button {
+	margin-top: 31PX;
+	margin-left: 52px;
+}
+
+h1 {
+	margin-left: 36px;
+}
+
+label {
+	border: 2px solid black;
+	padding: 1px 11px;
+}
+</style>
+
+<script>
+function submitVote() {
+  var form = document.querySelector('form');
+  var selected = form.querySelector('input[type="radio"]:checked');
+  var message = document.querySelector('#message');
+  var button = document.getElementById('submitBtn');
+  if (selected) {
+    
+      message.innerHTML = 'Thanks for voting!';
+    
+  } else 
+  {
+    message.innerHTML = 'Please select a candidate.';
+  }
+}
+
+</script>
+
+
+
+</body>
+</html>

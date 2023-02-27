@@ -1,0 +1,39 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>List Employees</title>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h3>vote</h3>
+
+		<hr />
+
+		<table class="table table-bordered table-striped">
+
+			<thead>
+				<tr>
+					<th>candidate 3</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="votingDetails2: ${votings3}">
+					
+					<td th:text="${votingDetails2.candidate3}" />
+
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+
+</body>
+
+</html>

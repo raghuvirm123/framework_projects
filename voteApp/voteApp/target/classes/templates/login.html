@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script type="text/javascript">
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null
+	};
+</script>
+
+<title>login</title>
+</head>
+<body>
+	<form th:action="@{userLogin}" name="search-theme-form"
+		th:object="${userDetails}" method="post">
+
+		<h1>Login</h1>
+
+		<input class="btn" type="text" value="" name="username" id="usname"
+			placeholder="USERNAME" required="required" th:field="*{username}">
+		<br> <input class="btn" type="text" value="" name="password"
+			id="pass" placeholder="PASSWORD" required="required"
+			th:field="*{password}"> <br>
+		<button id="login" type="submit" onclick="message()">LOGIN</button>
+
+		<button id="register">
+			<a href="/register">REGISTER</a>
+		</button>
+
+	</form>
+	<div class="message">
+		<div class="success" id="success">wrong details!</div>
+		<div class="danger" id="danger">Feilds Can't be Empty!</div>
+	</div>
+
+	<style>
+form {
+	background-color: lightgoldenrodyellow;
+	border-radius: 10px;
+	border: 2px solid black;
+	padding: 49px 31px;
+	display: inline-block;
+}
+
+input {
+	margin-top: 24PX;
+}
+
+button {
+	margin-top: 65PX;
+	margin-left: 3px;
+	text-decoration: none;
+}
+
+h1 {
+	margin-left: 36px;
+}
+
+.btn {
+	padding: 4px 2px;
+}
+
+.message .success {
+	transition: .1s;
+	display: none;
+}
+
+.message .danger {
+	transition: .1s;
+	display: none;
+}
+</style>
+
+	</style>
+
+	<script>
+    function message(){
+       var usname = document.getElementById('usname');
+       var pass = document.getElementById('pass');
+    
+       const success = document.getElementById('success');
+       const danger = document.getElementById('danger');
+    
+    if(usname.value === '' || pass.value === ''){
+        danger.style.display = 'block';
+    }
+    else{
+        setTimeout(() => {
+        	usname.value = '';
+        	pass.value = '';
+        	
+        }, 5000);
+
+        success.style.display = 'block';
+    }
+    
+    setTimeout(() => {
+        danger.style.display = 'none';
+        success.style.display = 'none';
+    }, 5000);
+    
+    
+    }
+    
+    
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Register</title>
+</head>
+<body>
+	<form action="createUSer" method="post">
+		<h1>Register</h1>
+
+		    <input class="inp" type="text" name="username" id="usname"
+			placeholder="USERNAME" required="required"> 
+			<br> 
+			<input
+			class="inp" type="text" name="password" id="pass"
+			placeholder="PASSWORD" required="required"> 
+			<br> 
+			<input
+			class="inp" type="text" name="email" id="eid" placeholder="EMAIL ID"
+			required="required">
+		    <br> 
+		    <input class="inp" type="text"
+			name="pno" id="pno" placeholder="PHONE NO." required="required">
+		    <br>
+
+		    <button type="">
+			<a href="/login">LOGIN</a>
+		</button>
+		<button class="button" type="submit" onclick="message()">REGISTER</button>
+		<span id="msg"></span>
+	</form>
+
+	<div class="message">
+
+		<div class="danger" id="danger">Feilds Can't be Empty!</div>
+	</div>
+
+	<style>
+form {
+	background-color: lightgoldenrodyellow;
+	border-radius: 10px;
+	border: 2px solid black;
+	padding: 49px 31px;
+	display: inline-block;
+}
+
+input {
+	margin-top: 24PX;
+}
+
+button {
+	margin-top: 65PX;
+	margin-left: 3px;
+}
+
+h1 {
+	margin-left: 36px;
+}
+
+.inp {
+	padding: 4px 2px;
+}
+
+.message .danger {
+	transition: .1s;
+	display: none;
+	color: red;
+}
+</style>
+
+	<script>
+    function message(){
+    var usname = document.getElementById('usname');
+    var pass = document.getElementById('pass');
+    var eid = document.getElementById('eid');
+    var pno = document.getElementById('pno');
+    
+    const danger = document.getElementById('danger');
+    
+    if(usname.value === '' || pass.value === '' || eid.value === '' || pno.value === ''){
+        danger.style.display = 'block';
+    }
+    else{
+        setTimeout(() => {
+        	usname.value = '';
+        	pass.value = '';
+        	eid.value = '';
+        	pno.value = '';
+        }, 2000);
+
+        
+    }
+    
+    setTimeout(() => {
+        danger.style.display = 'none';
+        
+    }, 5000);
+    
+    
+    }
+    
+    
+    </script>
+</body>
+</html>
